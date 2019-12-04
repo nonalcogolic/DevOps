@@ -1,27 +1,26 @@
 language: python
-sudo: true
 python:
-	- "3.5"
-	- "3.6"
+  - "3.5"
+  - "3.6"
 
 only:
-	- master
+  - master
 
 addons:
-	firefox: "latest"
+  firefox: "latest"
 
 env:
-	- DJANGO_VERSION=1.11
-	- DJANGO_VERSION=2.0
+  - DJANGO_VERSION=1.11
+  - DJANGO_VERSION=2.0
 
 install:
-	- pip install -I Django==$DJANGO_VERSION
-	- pip install -I requirements.txt
+  - pip install -I Django==$DJANGO_VERSION
+  - pip install -I requirements.txt
 
 before_script:
 script:
-	- PYTHONWARNINGS=all pytest --cov=.
-	- py.test calculator/math_test.py
+  - PYTHONWARNINGS=all pytest --cov=.
+  - py.test calculator/math_test.py
 
 after_success:
-	- codecov
+  - codecov
