@@ -15,7 +15,7 @@ env:
 
 install:
   - pip install -I Django==$DJANGO_VERSION
-  - pip install -I requirements.txt
+  - pip install -r requirements.txt
 
 before_script:
 script:
